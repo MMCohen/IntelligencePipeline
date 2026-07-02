@@ -1,4 +1,5 @@
 ﻿using IntelligencePipeline.Models.Enums;
+using IntelligencePipeline.Models.Reports;
 
 namespace IntelligencePipeline
 {
@@ -6,7 +7,11 @@ namespace IntelligencePipeline
     {
         static void Main()
         {
-            ReportStatus reportStatus;
+            DroneReport rp = new DroneReport(12, DateTime.Now, 12.1, 12.1, "dfgdfg", 2343, 234234);
+            Console.WriteLine(rp.GetType);
+            int i = rp.ReportId;
+            Console.WriteLine(i);
+
         }
     }
 }

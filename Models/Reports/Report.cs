@@ -15,21 +15,45 @@ namespace IntelligencePipeline.Models.Reports
         private int _reliabilityScore;
         private string _rejectionReason;
 
-        protected Report(int reportId, DateTime timestamp, double latitude, double longitude, string description)
+        protected Report(int reportId, DateTime timestamp, double latitude,
+            double longitude, string description)
         {
-
+            ReportId = reportId;
+            Timestamp = timestamp;
+            Latitude = latitude;
+            Longitude = longitude;
+            Description = description;
+            Status = ReportStatus.New;
+            //Priority = ;
+            //Classification = ;
+            //ReliabilityScore = ;
+            //RejectionReason = ;
         }
 
 
-        public int ReportId { get; } // Read-only, set in constructor
-        public DateTime Timestamp { get; set; } // Validated: not in future, not before 2020-01-01
-        public double Latitude { get; set; } // Validated: 29.5000–33.5000
-        public double Longitude { get; set; } // Validated: 34.0000–36.0000
-        public string Description { get; set; } // Validated: 10–500 characters
-        public ReportStatus Status { get; set; } // Validated: must be valid enum value
+        public int ReportId { get => _reportId; protected set => _reportId = value ; }
+        public DateTime Timestamp { get => _timestamp; protected set => _timestamp = value ; }
+        public double Latitude { get => _latitude; protected set { _latitude = value ; } }
+        public double Longitude { get => _longitude; protected set => _longitude = value; }
+        public string Description { get => _description; protected set => _description = value; }
+        public ReportStatus Status { get => _status; set => _status = value; }
         public Priority Priority { get; set; }
         public Classification Classification { get; set; }
-        public int ReliabilityScore { get; set; } // Validated: 1–10
+        public int ReliabilityScore { get; set; }
         public string RejectionReason { get; set; }
+
+
+        /// <summary>
+        /// Returns a formatted summary of the report. Derived classes can override for source-specific formatting.
+        /// </summary>
+        /// <returns></returns>
+        public abstract string GetSourceType(); 
+        public abstract int CalculateReliabilityScore();
+        public virtual string GetSummary()
+                => $"ReportId: {ReportId} | Status: {Status} | Description: {Description} ";
+        public override string ToString()
+            => $"ReportId: {ReportId} | Time: {Timestamp}" +
+            $" | Latitude: {Latitude} | Longitude: {Longitude} |" +
+            $" Status: {Status} | Description: {Description} ";
     }
 }
