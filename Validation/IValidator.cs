@@ -1,7 +1,9 @@
+using IntelligencePipeline.Models.Reports;
+
 namespace IntelligencePipeline.Validation
 {
     interface IValidator
     {
-        public bool Validator();
+        ValidationResult Validate(Report report);
     }
 }
