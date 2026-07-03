@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace IntelligencePipeline.Models.Reports
 {
-    class SoldierReport : Report, IValidator
+    class SoldierReport : Report
     {
 
         private string _soldierName;
@@ -40,10 +40,6 @@ namespace IntelligencePipeline.Models.Reports
             return BaseReliability;
         }
 
-        public bool Validator()
-        {
-            return true; //TODO implement 
-        }
            
 
     }

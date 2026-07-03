@@ -3,7 +3,7 @@ using IntelligencePipeline.Validation;
 
 namespace IntelligencePipeline.Models.Reports
 {
-    class RadarReport : Report , IValidator
+    class RadarReport : Report
     {
         private int _speed;
         private int _direction;
@@ -40,7 +40,6 @@ public RadarReport(int reportId, DateTime timestamp, double latitude,
             return BaseReliability;
         }
 
-        public bool Validator() => false; //TODO:
 
 
     }

@@ -1,4 +1,7 @@
-namespace IntelligencePipeline.Validation
-{
+//namespace IntelligencePipeline.Validation
+//{
+//    class SignalValidator : BaseValidator, IValidator
+//    {
 
-}
+//    }
+//}

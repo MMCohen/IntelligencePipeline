@@ -2,7 +2,7 @@ using IntelligencePipeline.Validation;
 
 namespace IntelligencePipeline.Models.Reports
 {
-    class DroneReport: Report, IValidator
+    class DroneReport: Report
     {
         const int IMAGE_GOOD_QUALITY = 80;
         const int IMAGE_MEDIUM_QUALITY = 50;
@@ -39,10 +39,7 @@ namespace IntelligencePipeline.Models.Reports
             return BaseReliability;
         }
 
-        public bool Validator()
-        {
-            return false;
-        }
+
 
 
     }

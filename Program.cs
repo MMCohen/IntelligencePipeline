@@ -1,5 +1,6 @@
 ﻿using IntelligencePipeline.Models.Enums;
 using IntelligencePipeline.Models.Reports;
+using IntelligencePipeline.Validation;
 
 namespace IntelligencePipeline
 {
@@ -7,10 +8,17 @@ namespace IntelligencePipeline
     {
         static void Main()
         {
-            DroneReport rp = new DroneReport(12, DateTime.Now, 12.1, 12.1, "dfgdfg", 2343, 234234);
-            Console.WriteLine(rp.GetType);
-            int i = rp.ReportId;
-            Console.WriteLine(i);
+            DroneReport rp = new DroneReport(12, DateTime.Parse("01/01/2020"), 30, 35, "hello world how", 5000, 87);
+            //Console.WriteLine(rp.GetType);
+
+            SoldierReport sr = new SoldierReport(13, DateTime.Parse("01/01/2020"), 30, 35,
+                "hello world how", "Moshe", "1234567", "99", 4);
+
+            SoldierValidator x = new SoldierValidator();
+            ValidationResult y = x.Validate(sr);
+            Console.WriteLine(y.ErrorMessage);
+            //Console.WriteLine(x.Validate(rp));
+
 
         }
     }

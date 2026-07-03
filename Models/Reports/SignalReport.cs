@@ -6,7 +6,7 @@ using System.Reflection.Metadata;
 
 namespace IntelligencePipeline.Models.Reports
 {
-    class SignalReport : Report, IValidator
+    class SignalReport : Report
     {
 
         private double _frequency;
@@ -46,7 +46,6 @@ namespace IntelligencePipeline.Models.Reports
             return BaseReliability;
         }
 
-        public bool Validator() => false; // TODO:
 
 
     }

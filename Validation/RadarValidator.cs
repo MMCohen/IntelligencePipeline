@@ -1,4 +1,7 @@
-namespace IntelligencePipeline.Validation
-{
+//namespace IntelligencePipeline.Validation
+//{
+//    class RadarValidator : BaseValidator, IValidator
+//    {
 
-}
+//    }
+//}

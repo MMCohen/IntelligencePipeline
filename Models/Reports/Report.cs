@@ -4,6 +4,7 @@ namespace IntelligencePipeline.Models.Reports
 {
     abstract class Report
     {
+
         private int _reportId;
         private DateTime _timestamp;
         private double _latitude;
