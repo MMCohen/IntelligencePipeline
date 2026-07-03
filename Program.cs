@@ -19,16 +19,25 @@ namespace IntelligencePipeline
             //Console.WriteLine(y.ErrorMessage);
             //Console.WriteLine(x.Validate(rp));
 
-            // radar testing
-            RadarReport radarReport = new RadarReport(12, DateTime.Parse("01/01/2020"), 30, 35, "hello world how",
-                2000, 359, 200);
+            //// radar testing
+            //RadarReport radarReport = new RadarReport(12, DateTime.Parse("01/01/2020"), 30, 35, "hello world how",
+            //    2000, 359, 200);
 
-            RadarValidator radarValidator = new RadarValidator();
-            ValidationResult radarResult = radarValidator.Validate(radarReport);
+            //RadarValidator radarValidator = new RadarValidator();
+            //ValidationResult radarResult = radarValidator.Validate(radarReport);
 
-            Console.WriteLine(radarResult.ErrorMessage);
+            //Console.WriteLine(radarResult.ErrorMessage);
 
-            //
+
+            //// Signal testing
+            //SignalReport signalReport = new SignalReport(12, DateTime.Parse("01/01/2020"), 30, 35, "hello world how",
+            //    3, "d434534", "hebrew", -14);
+
+            //SignalValidator signalValidator = new SignalValidator();
+            //ValidationResult signalResult = signalValidator.Validate(signalReport);
+
+            //Console.WriteLine(signalResult.ErrorMessage);
+
 
 
 

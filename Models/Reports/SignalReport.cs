@@ -11,19 +11,19 @@ namespace IntelligencePipeline.Models.Reports
 
         private double _frequency;
         private string _content;
-        private Language _language;
+        private string _language; // I change it from enum to string so the validation will be outside
         private int _signalStrength;
 
 
         public double Frequency { get => _frequency; protected set => _frequency = value; }
         public string Content { get => _content; protected set => _content = value; }
-        public Language Language { get => _language; protected set => _language = value; }
+        public string Language { get => _language; protected set => _language = value; }
         public int SignalStrength { get => _signalStrength; protected set => _signalStrength = value; }
 
 
         public SignalReport(int reportId, DateTime timestamp, double latitude,
             double longitude, string description,
-            double frequency, string content, Language language,
+            double frequency, string content, string language,
             int signalStrength)
                 : base(reportId, timestamp, latitude, longitude, description)
         {
