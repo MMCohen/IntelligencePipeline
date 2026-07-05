@@ -1,4 +1,5 @@
-﻿using IntelligencePipeline.Models.Enums;
+﻿using IntelligencePipeline.Calculators;
+using IntelligencePipeline.Models.Enums;
 using IntelligencePipeline.Models.Reports;
 using IntelligencePipeline.Validation;
 
@@ -37,6 +38,7 @@ namespace IntelligencePipeline
             //ValidationResult signalResult = signalValidator.Validate(signalReport);
 
             //Console.WriteLine(signalResult.ErrorMessage);
+
 
 
 

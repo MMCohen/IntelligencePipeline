@@ -25,10 +25,6 @@ namespace IntelligencePipeline.Models.Reports
             Longitude = longitude;
             Description = description;
             Status = ReportStatus.New;
-            //Priority = ;
-            //Classification = ;
-            //ReliabilityScore = ;
-            //RejectionReason = ;
         }
 
 
@@ -38,10 +34,10 @@ namespace IntelligencePipeline.Models.Reports
         public double Longitude { get => _longitude; protected set => _longitude = value; }
         public string Description { get => _description; protected set => _description = value; }
         public ReportStatus Status { get => _status; set => _status = value; }
-        public Priority Priority { get; set; }
-        public Classification Classification { get; set; }
-        public int ReliabilityScore { get; set; }
-        public string RejectionReason { get; set; }
+        public Priority Priority { get => _priority; set => _priority = value; }
+        public Classification Classification { get => _classification; set => _classification = value; }
+        public int ReliabilityScore { get => _reliabilityScore; set => _reliabilityScore = value; }
+        public string RejectionReason { get => _rejectionReason; set => _rejectionReason = value; }
 
 
         /// <summary>
