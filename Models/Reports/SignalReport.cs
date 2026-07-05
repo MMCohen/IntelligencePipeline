@@ -35,15 +35,29 @@ namespace IntelligencePipeline.Models.Reports
         public override string GetSourceType()
             => "Signal";
 
+        private bool IsContains(string text, params string[] keywords)
+        {
+            foreach (string word in keywords)
+            {
+                if (text.Contains(word))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public override int CalculateReliabilityScore()
         {
             int BaseReliability = 5;
-            //- SignalStrength >= -40: +3
-            //- SignalStrength >= -70: +2
-            //- Content contains attack / target / border / vehicle: +1
-            //- SignalStrength< -100: -2
-            //- Result clamped to 1–10
-            return BaseReliability;
+
+            if (SignalStrength >= -40) BaseReliability += 3;
+            else if(SignalStrength >= -70) BaseReliability += 2;
+            else if(SignalStrength < -100) BaseReliability -= 2;
+            if (IsContains(Content, ["attack", "target", "border", "vehicle"]))
+                BaseReliability += 1;
+             
+            return Math.Clamp(BaseReliability, 1, 10);
         }
 
 

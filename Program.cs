@@ -13,11 +13,12 @@ namespace IntelligencePipeline
             //Console.WriteLine(rp.GetType);
 
             SoldierReport sr = new SoldierReport(13, DateTime.Parse("01/01/2020"), 30, 35,
-                "hello world how", "Moshe", "1234567", "99", 4);
+                "hello world weapon how weapon", "Moshe", "1234567", "99", 1);
 
             //SoldierValidator x = new SoldierValidator();
             //ValidationResult y = x.Validate(sr);
             //Console.WriteLine(y.ErrorMessage);
+            //Console.WriteLine(sr.CalculateReliabilityScore());
             //Console.WriteLine(x.Validate(rp));
 
             //// radar testing

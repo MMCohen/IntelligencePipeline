@@ -32,12 +32,24 @@ namespace IntelligencePipeline.Models.Reports
         
             public override string GetSourceType()
             => "Soldier";
+        
+        private bool IsContains(string text, params string[] keywords)
+        {
+            foreach(string word in keywords)
+            {
+                if (text.Contains(word))
+                    return true;
+            }
+            return false;
+        }
 
         public override int CalculateReliabilityScore()
         {
             int BaseReliability = 4;
-            // TODO: calculate heare?
-            return BaseReliability;
+            BaseReliability += ConfidenceLevel;
+            if (IsContains(Description, ["weapon", "vehicle", "movement", "explosion"]))
+                BaseReliability += 1;
+            return Math.Clamp(BaseReliability, 1, 10);
         }
 
            

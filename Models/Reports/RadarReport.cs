@@ -29,15 +29,14 @@ public RadarReport(int reportId, DateTime timestamp, double latitude,
         public override int CalculateReliabilityScore()
         {
             int BaseReliability = 6;
-            // TODO: 
-            //            -Base: 6
-            //- Distance 500–30000: +2
-            //- Speed 10–900: +1
-            //- Distance > 70000: -2
-            //- Speed > 1500: -2
-            //- Result clamped to 1–10
 
-            return BaseReliability;
+            if (Distance >= 500 && Distance <= 30000) BaseReliability += 2;
+            else if (Distance > 70000) BaseReliability -= 2;
+
+            if (Speed >= 10 && Speed <= 900) BaseReliability += 1;
+            else if (Speed > 1500) BaseReliability -= 2;
+
+            return Math.Clamp(BaseReliability, 1, 10);
         }
 
 
